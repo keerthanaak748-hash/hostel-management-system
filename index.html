@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechTalk AI — Student Discussion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section id="authView" class="auth-card">
+      <div class="brand-mark">✦</div>
+      <p class="eyebrow">STUDENT LEARNING SPACE</p>
+      <h1>TechTalk <span>AI</span></h1>
+      <p class="muted">Ask technical questions. Learn at your own pace.</p>
+
+      <div class="auth-tabs">
+        <button id="loginTab" class="tab active" type="button">Log in</button>
+        <button id="signupTab" class="tab" type="button">Create account</button>
+      </div>
+
+      <form id="authForm">
+        <label for="email">Student email</label>
+        <input id="email" type="email" placeholder="you@example.com" required autocomplete="email" />
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="At least 6 characters" required minlength="6" autocomplete="current-password" />
+        <button id="authSubmit" class="primary-btn" type="submit">Log in</button>
+      </form>
+      <p id="authMessage" class="message" role="status"></p>
+      <p class="tiny">Use your own student email. Never share your password.</p>
+    </section>
+
+    <section id="chatView" class="chat-layout hidden">
+      <aside class="sidebar">
+        <div class="sidebar-brand"><span>✦</span> TechTalk AI</div>
+        <button id="newChatBtn" class="new-chat-btn" type="button">＋ New discussion</button>
+        <div class="sidebar-note">
+          <p class="eyebrow">SUGGESTED TOPICS</p>
+          <button class="topic-btn" data-prompt="Explain data structures with simple examples.">Data structures</button>
+          <button class="topic-btn" data-prompt="Teach me the basics of Python programming.">Python programming</button>
+          <button class="topic-btn" data-prompt="Explain computer networks for a beginner.">Computer networks</button>
+          <button class="topic-btn" data-prompt="What is artificial intelligence? Explain with examples.">Artificial intelligence</button>
+        </div>
+        <div class="sidebar-bottom">
+          <span id="studentEmail" class="student-email"></span>
+          <button id="logoutBtn" class="logout-btn" type="button">Log out</button>
+        </div>
+      </aside>
+
+      <section class="chat-main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">YOUR AI STUDY PARTNER</p>
+            <h2>Technical discussion</h2>
+          </div>
+          <span class="online-pill"><i></i> AI assistant</span>
+        </header>
+
+        <div id="messages" class="messages">
+          <div class="welcome">
+            <div class="welcome-icon">✦</div>
+            <h1>What would you like to learn?</h1>
+            <p>Ask questions about coding, computer science, engineering or technology.</p>
+            <div class="prompt-grid">
+              <button class="prompt-card" data-prompt="Explain stack and queue with real-world examples.">Explain stack and queue <span>→</span></button>
+              <button class="prompt-card" data-prompt="What is object-oriented programming? Explain its four principles.">Learn OOP concepts <span>→</span></button>
+              <button class="prompt-card" data-prompt="Help me understand binary search with an example.">Understand binary search <span>→</span></button>
+              <button class="prompt-card" data-prompt="Give me a beginner-friendly introduction to cybersecurity.">Explore cybersecurity <span>→</span></button>
+            </div>
+          </div>
+        </div>
+
+        <form id="chatForm" class="composer">
+          <textarea id="question" rows="1" placeholder="Ask a technical question..." required></textarea>
+          <button id="sendBtn" class="send-btn" type="submit" aria-label="Send question">➤</button>
+          <p class="composer-hint">AI can make mistakes. Verify important answers with your textbooks.</p>
+        </form>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

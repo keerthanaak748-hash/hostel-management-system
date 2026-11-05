@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hostel Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🏠 HostelHub</div>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#room">Room</a>
+        <a href="#mess">Mess</a>
+        <a href="#complaints">Complaints</a>
+    </nav>
+</header>
+
+<section id="dashboard" class="hero">
+
+    <div>
+        <h1>Hostel Management System</h1>
+
+        <p>
+            Manage your hostel information, room,
+            mess and complaints in one place.
+        </p>
+
+        <button onclick="showWelcome()">
+            Enter Hostel Dashboard
+        </button>
+    </div>
+
+</section>
+
+<main>
+
+<section class="profile">
+
+    <h2>👤 Student Profile</h2>
+
+    <div class="profile-card">
+
+        <div>
+            <h3>Keerthana</h3>
+
+            <p>
+                <b>Register No:</b> 23CS001
+            </p>
+
+            <p>
+                <b>Department:</b> Computer Science
+            </p>
+
+            <p>
+                <b>Year:</b> 2nd Year
+            </p>
+        </div>
+
+        <div class="status">
+            <span>Active Student</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="room">
+
+    <h2>🛏️ Room Information</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Room Number</h3>
+            <p>G-204</p>
+        </div>
+
+        <div class="card">
+            <h3>Room Type</h3>
+            <p>3 Sharing</p>
+        </div>
+
+        <div class="card">
+            <h3>Block</h3>
+            <p>Block A</p>
+        </div>
+
+        <div class="card">
+            <h3>Roommates</h3>
+            <p>2 Students</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="mess">
+
+    <h2>🍛 Today's Mess Menu</h2>
+
+    <div class="menu">
+
+        <div>
+            <h3>Breakfast</h3>
+            <p>Idli + Sambar + Tea</p>
+        </div>
+
+        <div>
+            <h3>Lunch</h3>
+            <p>Rice + Curry + Vegetables</p>
+        </div>
+
+        <div>
+            <h3>Evening</h3>
+            <p>Tea + Snacks</p>
+        </div>
+
+        <div>
+            <h3>Dinner</h3>
+            <p>Chapati + Curry + Salad</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="notice">
+
+    <h2>📢 Hostel Notices</h2>
+
+    <div class="notice-box">
+
+        <p>
+            🔔 Hostel inspection will be conducted on Friday.
+        </p>
+
+        <p>
+            🔔 Students should maintain cleanliness in rooms.
+        </p>
+
+        <p>
+            🔔 Mess timings have been updated.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="complaints">
+
+    <h2>🛠️ Register a Complaint</h2>
+
+    <div class="complaint-container">
+
+        <form id="complaintForm">
+
+            <label>Student Name</label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label>Room Number</label>
+
+            <input
+                type="text"
+                id="roomNumber"
+                placeholder="Enter room number"
+                required
+            >
+
+            <label>Complaint Type</label>
+
+            <select id="complaintType">
+
+                <option>Electrical</option>
+                <option>Water</option>
+                <option>Cleaning</option>
+                <option>Food</option>
+                <option>Internet</option>
+                <option>Other</option>
+
+            </select>
+
+            <label>Complaint</label>
+
+            <textarea
+                id="complaintText"
+                placeholder="Describe your complaint"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Submit Complaint
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>📋 Submitted Complaints</h2>
+
+    <div id="complaintList"></div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 HostelHub | Hostel Management System
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

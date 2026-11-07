@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard - Hostel Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="student">
+<div class="layout">
+  <aside class="sidebar" id="sidebar"></aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="top-left"><button class="menu-btn" id="menuBtn">☰</button><h2 id="pageTitle">Dashboard</h2></div>
+      <div class="user-chip" id="userChip"></div>
+    </header>
+
+    <main class="content">
+      <!-- Each section is filled by script.js (studentRenderers) -->
+      <section class="section" id="sec-dashboard"></section>
+      <section class="section" id="sec-profile"></section>
+      <section class="section" id="sec-room"></section>
+      <section class="section" id="sec-attendance"></section>
+      <section class="section" id="sec-leave"></section>
+      <section class="section" id="sec-complaints"></section>
+      <section class="section" id="sec-mess"></section>
+      <section class="section" id="sec-fees"></section>
+      <section class="section" id="sec-notices"></section>
+      <section class="section" id="sec-contact"></section>
+    </main>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>initStudent();</script>
+</body>
+</html>

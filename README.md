@@ -154,7 +154,3 @@ This project is designed as an academic/educational Hostel Management System and
 Keerthana A K
 
 BTech Computer Science Engineering Student
-
----
-
-⭐ If you find this project useful, consider giving the repository a star!

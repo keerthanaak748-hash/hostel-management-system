@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Hostel Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login">
+<div class="auth-wrap">
+
+  <div class="auth-side">
+    <div class="brand" style="color:#fff;margin-bottom:24px"><div class="logo" style="background:rgba(255,255,255,.2)">🏨</div>Hostel Management System</div>
+    <h1>Welcome to your hostel portal</h1>
+    <p style="opacity:.9">Manage your stay, track attendance, apply for leave and more.</p>
+    <ul>
+      <li>✔ Room &amp; bed details</li>
+      <li>✔ Attendance &amp; leave management</li>
+      <li>✔ Complaints &amp; mess feedback</li>
+      <li>✔ Fee status &amp; notices</li>
+    </ul>
+    <p style="margin-top:30px"><a href="index.html" style="color:#fff;text-decoration:underline">← Back to Home</a></p>
+  </div>
+
+  <div class="auth-main">
+    <div class="auth-box">
+      <div class="tabs">
+        <button class="active" data-tab="student" onclick="switchAuthTab('student')">🎓 Student</button>
+        <button data-tab="admin" onclick="switchAuthTab('admin')">🛡️ Warden / Admin</button>
+        <button data-tab="register" onclick="switchAuthTab('register')">✍️ Register</button>
+      </div>
+
+      <!-- Student login -->
+      <form class="auth-form" id="form-student" onsubmit="event.preventDefault();doLogin('student')">
+        <h2 style="margin-bottom:16px">Student Login</h2>
+        <div class="alert" id="studentAlert"></div>
+        <div class="form-group"><label>Register No. / Email / Phone</label><input id="studentId" placeholder="Enter register number, email or phone" autocomplete="username"></div>
+        <div class="form-group"><label>Password</label><input type="password" id="studentPw" placeholder="Enter password" autocomplete="current-password"></div>
+        <div style="text-align:right;margin-bottom:14px"><button type="button" class="link" onclick="forgotPassword()">Forgot password?</button></div>
+        <button class="btn block">Login as Student</button>
+        <div class="hint" id="studentHint"></div>
+      </form>
+
+      <!-- Admin login -->
+      <form class="auth-form" id="form-admin" style="display:none" onsubmit="event.preventDefault();doLogin('admin')">
+        <h2 style="margin-bottom:16px">Warden / Admin Login</h2>
+        <div class="alert" id="adminAlert"></div>
+        <div class="form-group"><label>Username / Email / Phone</label><input id="adminId" placeholder="Enter username" autocomplete="username"></div>
+        <div class="form-group"><label>Password</label><input type="password" id="adminPw" placeholder="Enter password" autocomplete="current-password"></div>
+        <div style="text-align:right;margin-bottom:14px"><button type="button" class="link" onclick="forgotPassword()">Forgot password?</button></div>
+        <button class="btn block">Login as Warden</button>
+        <div class="hint" id="adminHint"></div>
+      </form>
+
+      <!-- Registration -->
+      <form class="auth-form" id="form-register" style="display:none" onsubmit="event.preventDefault();doRegister()">
+        <h2 style="margin-bottom:16px">Student Registration</h2>
+        <div class="alert" id="regAlert"></div>
+        <div class="form-group"><label>Full Name</label><input id="rName"></div>
+        <div class="form-row">
+          <div class="form-group"><label>Register No.</label><input id="rReg"></div>
+          <div class="form-group"><label>Gender</label><select id="rGender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Email</label><input type="email" id="rEmail"></div>
+          <div class="form-group"><label>Phone (10 digits)</label><input id="rPhone" maxlength="10"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Department</label><select id="rDept"><option value="">Select</option><option>CSE</option><option>IT</option><option>ECE</option><option>EEE</option><option>MECH</option><option>CIVIL</option></select></div>
+          <div class="form-group"><label>Year</label><select id="rYear"><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Password</label><input type="password" id="rPw"></div>
+          <div class="form-group"><label>Confirm Password</label><input type="password" id="rPw2"></div>
+        </div>
+        <button class="btn block">Create Account</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>initLogin();</script>
+</body>
+</html>

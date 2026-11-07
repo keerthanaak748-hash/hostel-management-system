@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechTalk AI — Student Discussion</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Management System</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <main class="app-shell">
-    <section id="authView" class="auth-card">
-      <div class="brand-mark">✦</div>
-      <p class="eyebrow">STUDENT LEARNING SPACE</p>
-      <h1>TechTalk <span>AI</span></h1>
-      <p class="muted">Ask technical questions. Learn at your own pace.</p>
+<body data-page="home">
 
-      <div class="auth-tabs">
-        <button id="loginTab" class="tab active" type="button">Log in</button>
-        <button id="signupTab" class="tab" type="button">Create account</button>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="brand"><div class="logo">🏨</div><span id="hostelNameBrand">College Hostel</span></div>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#notices">Notices</a>
+      <a href="#contact">Contact</a>
+      <a class="btn sm" href="login.html#student">Login</a>
+      <a class="btn sm secondary" href="login.html#register">Register</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div>
+      <h1>Smart Hostel Management for Your Campus</h1>
+      <p>Room allotment, attendance, leave, complaints, mess and fee payments — everything for students and wardens in one place.</p>
+      <div class="hero-actions">
+        <a class="btn" href="login.html#student">🎓 Student Login</a>
+        <a class="btn outline" href="login.html#admin">🛡️ Warden Login</a>
       </div>
+    </div>
+    <div class="hero-card" id="homeStats"></div>
+  </section>
 
-      <form id="authForm">
-        <label for="email">Student email</label>
-        <input id="email" type="email" placeholder="you@example.com" required autocomplete="email" />
-        <label for="password">Password</label>
-        <input id="password" type="password" placeholder="At least 6 characters" required minlength="6" autocomplete="current-password" />
-        <button id="authSubmit" class="primary-btn" type="submit">Log in</button>
-      </form>
-      <p id="authMessage" class="message" role="status"></p>
-      <p class="tiny">Use your own student email. Never share your password.</p>
-    </section>
+  <!-- Features -->
+  <section class="section-pad" id="features">
+    <div class="section-title"><h2>Everything You Need</h2><p>A complete digital solution for modern college hostels</p></div>
+    <div class="feature-grid">
+      <div class="feature"><div class="ic">🛏️</div><h3>Room Management</h3><p>Visual room and bed allocation with live occupancy status.</p></div>
+      <div class="feature"><div class="ic">✅</div><h3>Attendance</h3><p>Daily attendance marking with monthly reports and percentages.</p></div>
+      <div class="feature"><div class="ic">📝</div><h3>Leave Requests</h3><p>Apply online and get approval from the warden instantly.</p></div>
+      <div class="feature"><div class="ic">🛠️</div><h3>Complaints</h3><p>Raise issues and track them from Pending to Resolved.</p></div>
+      <div class="feature"><div class="ic">🍽️</div><h3>Mess Menu</h3><p>Daily menu, announcements, feedback and mess complaints.</p></div>
+      <div class="feature"><div class="ic">💳</div><h3>Fee Tracking</h3><p>Paid, pending and due-date details with payment history.</p></div>
+    </div>
+  </section>
 
-    <section id="chatView" class="chat-layout hidden">
-      <aside class="sidebar">
-        <div class="sidebar-brand"><span>✦</span> TechTalk AI</div>
-        <button id="newChatBtn" class="new-chat-btn" type="button">＋ New discussion</button>
-        <div class="sidebar-note">
-          <p class="eyebrow">SUGGESTED TOPICS</p>
-          <button class="topic-btn" data-prompt="Explain data structures with simple examples.">Data structures</button>
-          <button class="topic-btn" data-prompt="Teach me the basics of Python programming.">Python programming</button>
-          <button class="topic-btn" data-prompt="Explain computer networks for a beginner.">Computer networks</button>
-          <button class="topic-btn" data-prompt="What is artificial intelligence? Explain with examples.">Artificial intelligence</button>
-        </div>
-        <div class="sidebar-bottom">
-          <span id="studentEmail" class="student-email"></span>
-          <button id="logoutBtn" class="logout-btn" type="button">Log out</button>
-        </div>
-      </aside>
+  <!-- Notices -->
+  <section class="section-pad" id="notices" style="background:#fff">
+    <div class="section-title"><h2>Latest Notices</h2><p>Stay updated with hostel announcements</p></div>
+    <div style="max-width:800px;margin:auto" id="homeNotices"></div>
+  </section>
 
-      <section class="chat-main">
-        <header class="topbar">
-          <div>
-            <p class="eyebrow">YOUR AI STUDY PARTNER</p>
-            <h2>Technical discussion</h2>
-          </div>
-          <span class="online-pill"><i></i> AI assistant</span>
-        </header>
+  <!-- Contact -->
+  <section class="section-pad" id="contact">
+    <div class="section-title"><h2>Contact & Emergency</h2><p>We are here to help 24x7</p></div>
+    <div class="two-col" style="max-width:1000px;margin:auto">
+      <div class="card"><h3>📞 Important Contacts</h3><div id="homeContacts"></div></div>
+      <div class="card"><h3>📜 Hostel Rules</h3>
+        <ol style="padding-left:20px;line-height:1.9;font-size:.92rem">
+          <li>Gates close at 9:00 PM — late entry needs warden permission.</li>
+          <li>Apply for leave through the portal before leaving campus.</li>
+          <li>Ragging is strictly prohibited.</li>
+          <li>Visitors allowed in the visitors' hall (4 PM – 6 PM) only.</li>
+          <li>No heaters or induction stoves in rooms.</li>
+          <li>Pay hostel fees before the due date.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
-        <div id="messages" class="messages">
-          <div class="welcome">
-            <div class="welcome-icon">✦</div>
-            <h1>What would you like to learn?</h1>
-            <p>Ask questions about coding, computer science, engineering or technology.</p>
-            <div class="prompt-grid">
-              <button class="prompt-card" data-prompt="Explain stack and queue with real-world examples.">Explain stack and queue <span>→</span></button>
-              <button class="prompt-card" data-prompt="What is object-oriented programming? Explain its four principles.">Learn OOP concepts <span>→</span></button>
-              <button class="prompt-card" data-prompt="Help me understand binary search with an example.">Understand binary search <span>→</span></button>
-              <button class="prompt-card" data-prompt="Give me a beginner-friendly introduction to cybersecurity.">Explore cybersecurity <span>→</span></button>
-            </div>
-          </div>
-        </div>
+  <footer class="footer">© 2026 College Hostel Management System. All rights reserved.</footer>
 
-        <form id="chatForm" class="composer">
-          <textarea id="question" rows="1" placeholder="Ask a technical question..." required></textarea>
-          <button id="sendBtn" class="send-btn" type="submit" aria-label="Send question">➤</button>
-          <p class="composer-hint">AI can make mistakes. Verify important answers with your textbooks.</p>
-        </form>
-      </section>
-    </section>
-  </main>
-  <script type="module" src="app.js"></script>
+  <script src="script.js"></script>
+  <script>initHome();</script>
 </body>
 </html>
